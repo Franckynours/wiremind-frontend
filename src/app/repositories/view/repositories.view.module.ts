@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RepositoriesDomainModule } from '../domain/repositories.domain.module';
 import { RepositoriesSearchComponent } from './search/search.component';
@@ -33,6 +29,7 @@ import { RepositoryCommitsTimelineComponent } from './details/commits/timeline/t
     ReactiveFormsModule,
     RepositoriesDomainModule,
     NgChartsModule,
+    MatTableModule,
   ],
   providers: [],
 })

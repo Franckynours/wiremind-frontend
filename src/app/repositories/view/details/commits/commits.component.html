@@ -1,4 +1,7 @@
-<div class="row">
-<app-repository-commits-contributors [commits]="commits"></app-repository-commits-contributors>
-<app-repository-commits-timeline [commits]="commits"></app-repository-commits-timeline>
+<div class="container">
+    <h2>Last 100 commits</h2>
+    <div class="row">
+<app-repository-commits-contributors class="flex-1" [commits]="commits"></app-repository-commits-contributors>
+<app-repository-commits-timeline class="flex-1"  [commits]="commits"></app-repository-commits-timeline>
+</div>
 </div>

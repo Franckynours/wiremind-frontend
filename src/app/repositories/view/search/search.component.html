@@ -1,4 +1,5 @@
-<form class="example-form">
+<form class="form">
+    <span><h2>Search a repository.</h2></span>
     <ng-select [items]="repositories$ | async"
             [typeahead]="filterValuesInput$"
            bindLabel="full_name"

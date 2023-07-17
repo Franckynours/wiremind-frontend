@@ -13,6 +13,7 @@ export class RepositoryCommitsTimelineComponent {
   set commits(commits: Commit[]) {
     this.lineChartDatasets = [
       {
+        label: 'Commits',
         data: commits.map((commit) => ({ x: commit.commit.author.date, y: 1 })),
       },
     ];
@@ -20,6 +21,7 @@ export class RepositoryCommitsTimelineComponent {
   // Line
   public lineChartOptions: ChartOptions<'line'> = {
     responsive: true,
+    showLine: false,
     scales: {
       x: {
         type: 'time',
@@ -35,6 +37,7 @@ export class RepositoryCommitsTimelineComponent {
     },
   };
   public lineChartDatasets: {
+    label?: string;
     data: { x: string; y: number }[];
   }[] = [
     {

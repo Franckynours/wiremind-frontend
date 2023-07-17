@@ -1,7 +1,18 @@
+.container{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
 .row{
     display: flex;
     flex-direction: row;
-    gap : 16px;
+    gap : 40px;
     padding : 30px 10px;
-    width: 100%
+    width: 100%;
+
+    .flex-1{
+        flex: 1;
+        padding:40px
+    }
 }

@@ -11,6 +11,7 @@ import { RepositoriesService } from 'src/app/repositories/domain/repositories.se
 export class RepositoryContributorsComponent {
   repository?: Repository;
   contributors: Contributor[] = [];
+  displayedColumns: string[] = ['avatar', 'name', 'contributions'];
   constructor(
     private activatedRoute: ActivatedRoute,
     private readonly service: RepositoriesService

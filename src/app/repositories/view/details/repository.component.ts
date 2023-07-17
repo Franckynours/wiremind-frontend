@@ -5,6 +5,7 @@ import { Repository } from '../../domain/repository.model';
 @Component({
   selector: 'app-repository',
   templateUrl: './repository.component.html',
+  styleUrls: ['./repository.component.scss'],
 })
 export class RepositoryComponent {
   repository?: Repository;
