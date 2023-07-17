@@ -7,7 +7,7 @@ import { RepositoryResolver } from '../domain/repository.resolver';
 const routes: Routes = [
   { path: '', component: RepositoriesSearchComponent, pathMatch: 'full' },
   {
-    path: ':name',
+    path: ':org/:name',
     component: RepositoryComponent,
     resolve: {
       repository: RepositoryResolver,

@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let commit of commits">
+        {{commit.sha}}
+        <br>
+        {{commit.author?.login}}</li>
+</ul>

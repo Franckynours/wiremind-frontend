@@ -12,6 +12,6 @@ export class RepositoryResolver implements Resolve<Repository> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<Repository> | Promise<Repository> | Repository {
-    return this.service.getRepository(route.paramMap.get('name'));
+    return this.service.getRepository(route.paramMap.get('org'), route.paramMap.get('name'));
   }
 }

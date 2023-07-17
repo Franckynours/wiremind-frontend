@@ -20,18 +20,19 @@ export class RepositoriesSearchComponent implements OnInit {
     readonly repositoriesService: RepositoriesService,
     private readonly route: ActivatedRoute,
     private readonly router: Router
-  ) {
-    this.repositories = this.repositoriesService.getRepositories();
-  }
+  ) {}
 
   ngOnInit(): void {
+    this.repositoriesService
+      .getRepositories()
+      .subscribe((repos) => (this.repositories = repos));
     this.searchControl.valueChanges.subscribe((selected) => {
       this.selectRepository(selected);
     });
   }
 
   selectRepository(repository: Repository) {
-    this.router.navigate([`${repository.name}`], {
+    this.router.navigate([`${repository.full_name}`], {
       relativeTo: this.route,
     });
   }
