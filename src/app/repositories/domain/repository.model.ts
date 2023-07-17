@@ -13,5 +13,5 @@ export interface Contributor {
 export interface Commit {
   sha: string;
   author: Contributor | null;
-  commit: { author: { name: string; email: string } };
+  commit: { author: { name: string; email: string; date: string } };
 }

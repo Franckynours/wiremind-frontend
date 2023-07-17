@@ -14,13 +14,17 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { RepositoryComponent } from './details/repository.component';
 import { RepositoryContributorsComponent } from './details/contributors/contributors.component';
 import { RepositoryCommitsComponent } from './details/commits/commits.component';
-
+import { RepositoryCommitsContributorsComponent } from './details/commits/contributors/contributors.component';
+import { NgChartsModule } from 'ng2-charts';
+import { RepositoryCommitsTimelineComponent } from './details/commits/timeline/timeline.component';
 @NgModule({
   declarations: [
     RepositoriesSearchComponent,
     RepositoryComponent,
     RepositoryContributorsComponent,
     RepositoryCommitsComponent,
+    RepositoryCommitsContributorsComponent,
+    RepositoryCommitsTimelineComponent,
   ],
   imports: [
     RepositoriesRoutingModule,
@@ -28,6 +32,7 @@ import { RepositoryCommitsComponent } from './details/commits/commits.component'
     CommonModule,
     ReactiveFormsModule,
     RepositoriesDomainModule,
+    NgChartsModule,
   ],
   providers: [],
 })

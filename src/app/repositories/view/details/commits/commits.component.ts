@@ -6,11 +6,12 @@ import {
   Repository,
 } from '../../../domain/repository.model';
 import { switchMap } from 'rxjs';
-import { RepositoriesService } from 'src/app/repositories/domain/repositories.service';
+import { RepositoriesService } from '../../../domain/repositories.service';
 
 @Component({
   selector: 'app-repository-commits',
   templateUrl: './commits.component.html',
+  styleUrls: ['./commits.component.scss'],
 })
 export class RepositoryCommitsComponent {
   repository?: Repository;

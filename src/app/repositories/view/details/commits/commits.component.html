@@ -1,6 +1,4 @@
-<ul>
-    <li *ngFor="let commit of commits">
-        {{commit.sha}}
-        <br>
-        {{commit.author?.login}}</li>
-</ul>
+<div class="row">
+<app-repository-commits-contributors [commits]="commits"></app-repository-commits-contributors>
+<app-repository-commits-timeline [commits]="commits"></app-repository-commits-timeline>
+</div>
