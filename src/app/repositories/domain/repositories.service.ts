@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Commit, Contributor, Repository } from './repository.model';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 @Injectable()
 export class RepositoriesService {
@@ -18,17 +18,21 @@ export class RepositoriesService {
     };
   }
 
-  getRepositories(): Observable<Repository[]> {
+  private getRepositories(): Observable<Repository[]> {
     return this.httpClient.get<Repository[]>(this.url, {
       headers: this.headers,
     });
   }
 
-  searchRepositories(name: string): Observable<Repository[]> {
-    return this.httpClient.get<Repository[]>(this.searchUrl, {
-      headers: this.headers,
-      params: { q: name },
-    });
+  searchRepositories(name?: string): Observable<Repository[]> {
+    if (name && name.length > 0) {
+      return this.httpClient
+        .get<{ items: Repository[] }>(this.searchUrl, {
+          headers: this.headers,
+          params: { q: name },
+        })
+        .pipe(map((res) => res.items));
+    } else return this.getRepositories();
   }
 
   getRepository(

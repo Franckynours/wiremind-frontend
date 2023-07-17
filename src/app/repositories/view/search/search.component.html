@@ -1,6 +1,8 @@
 <form class="example-form">
-    <ng-select [items]="repositories"
-           bindLabel="name"
+    <ng-select [items]="repositories$ | async"
+            [typeahead]="filterValuesInput$"
+           bindLabel="full_name"
+           (scrollToEnd)="loadMoreRepositories()"
            [formControl]="searchControl">
         </ng-select>
   </form>
